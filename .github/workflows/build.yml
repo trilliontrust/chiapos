@@ -23,6 +23,11 @@ jobs:
         python-version: '3.7'
       if: "!startsWith(matrix.os, 'ARM64')"
 
+    - name: Configure Python on ARM64
+      if: startsWith(matrix.os, 'ARM64')
+      run: |
+        sudo ln -s /usr/bin/python3.7 /usr/local/bin/python
+
     - name: Install cibuildwheel
       run: |
         python -m pip install --upgrade pip
