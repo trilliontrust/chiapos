@@ -18,7 +18,7 @@ jobs:
         # we need fetch-depth 0 so setuptools_scm can resolve tags
 
     - uses: actions/setup-python@v1
-      if: ! startsWith(matrix.os, 'ARM64')
+      if: !startsWith(matrix.os, 'ARM64')
       name: Install Python
       with:
         python-version: '3.7'
