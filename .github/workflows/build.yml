@@ -27,6 +27,8 @@ jobs:
       if: startsWith(matrix.os, 'ARM64')
       run: |
         sudo ln -s /usr/bin/python3.7 /usr/local/bin/python
+        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+        python3.7 get-pip.py
 
     - name: Install cibuildwheel
       run: |
